@@ -1,0 +1,35 @@
+.loan { 
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-form {
+    text-align: center;
+    margin: 2.5% 0;
+}
+
+.loan-details {
+    margin: auto;
+    width: 90%;
+}
+
+.table {
+    height: 60vh;
+    margin-bottom: 2%;
+}
+
+.scrollable {
+    overflow: auto;
+    height: 100%;
+}
+
+/* LOAN SUMMARY  */
+
+.loan-summary {
+    margin: auto;
+    background-color: #a2d8ce;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 3%;
+}

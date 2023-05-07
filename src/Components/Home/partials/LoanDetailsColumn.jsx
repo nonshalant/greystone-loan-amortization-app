@@ -29,6 +29,7 @@ const LoanDetailsColumn = () => {
 
   return (
     <div className="details-column">
+      <h2>Calculate your home mortgage debt and display your payment breakdown of interest paid, principal paid and loan balance over the life of the loan.</h2>
       <form onSubmit={handleSubmit} className='loan-form'>
         <div className="column">
           <label htmlFor="">Desired loan amount</label>

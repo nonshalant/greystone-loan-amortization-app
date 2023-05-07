@@ -10,9 +10,8 @@ const Nav = () => {
             <h1>GS Loan Amortization</h1>
           </div>
           <ul className='nav-links'>
-              <Link to='/'>Home</Link>
-              <Link to='/loan-amortization-table'>Loans</Link>
-              <Link to='/create-user'>SignUp</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/loan-amortization-table'>Loans</Link>
           </ul>
         </nav>
     </header>

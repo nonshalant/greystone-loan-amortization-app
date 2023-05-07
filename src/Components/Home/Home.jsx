@@ -9,15 +9,15 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-        <Heading />
         <div className='main'> 
         {
             userCreated === false ?  
-                <div className='user-col-left'> 
+                <div className='main-col'>
+                    <Heading /> 
                     <CreateUser setUserCreated={setUserCreated}/>
                 </div>
                 :
-                <div className='col-right'>
+                <div className='main-col '>
                     <LoanDetailsColumn />
                 </div> 
         }
