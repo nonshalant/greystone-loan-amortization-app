@@ -1,3 +1,60 @@
+.home-container {
+    width: 100%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+/* HEADING  */
+
+.heading-container {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+.heading-container p {
+    line-height: 2;
+}
+
+/* NEW USER  */
+
+.user {
+    display: flex;
+}
+
+.user-col {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.user-col .user-form .input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form {
+    margin-bottom: 2.5%;
+}
+
+.user-form .input-details {
+    font-style: italic;
+    font-size: small;
+    margin-bottom: 2%;
+}
+
+.input-container input {
+    padding: 2.5%;
+    margin: 2.5% 0;
+}
+
+.error-message {
+    background-color: red;
+    padding: 2%;
+    border-radius: 10px;
+    width: 100%;
+}
+
 /* LOAN DETAILS COLUMN*/
 
 .loan-form {
@@ -19,19 +76,7 @@
     width: 25%;
     padding: 2%;
     margin: auto;
-}
-
-/* LOAN SUMMARY  */
-
-.summary {
-    background-color: rgba(162, 216, 206, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-.summary-heading {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    background-color: #f4f4f4;
+    border: 1px solid black;
+    border-radius: 10px;
 }

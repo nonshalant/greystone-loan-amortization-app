@@ -48,8 +48,6 @@ const AmortizationTable = () => {
         "Content-Type": "application/json"
       }
     }).then(resp=>setData(resp.data))
-
-    console.log(data)
   }
 
   return (
