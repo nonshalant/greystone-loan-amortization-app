@@ -2,7 +2,6 @@ import React from 'react'
 import './home.css'
 import LoanDetailsColumn from './partials/LoanDetailsColumn'
 import LoanSummary from './partials/LoanSummary'
-import AmortizationTable from './partials/AmortizationTable'
 import Heading from './partials/Heading'
 
 const Home = () => {
@@ -17,7 +16,6 @@ const Home = () => {
             <LoanSummary />
             </div>
         </div>
-        <AmortizationTable />
     </>
   )
 }
