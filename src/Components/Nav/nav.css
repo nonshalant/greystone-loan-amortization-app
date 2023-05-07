@@ -1,0 +1,9 @@
+.nav-bar {
+    background-color: #f4f4f4;
+}
+.nav-links {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    padding: 2%;
+}
