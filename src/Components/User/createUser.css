@@ -1,0 +1,30 @@
+.user {
+    display: flex;
+}
+
+.user-col-left {
+    width: 50%;
+    margin: auto;
+}
+
+.user-col-left h2 {
+ 
+}
+
+.user-col-left .user-form {
+    width: 30%;
+}
+
+.user-col-left .user-form .input-container {
+    display: flex;
+    flex-direction: column;
+    width: ;
+}
+
+.user-col-right {
+    width: 50%;
+}
+
+.user-col-right .user-image {
+    width: 100%;
+}
