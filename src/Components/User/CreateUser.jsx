@@ -11,11 +11,8 @@ const CreateUser = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        const body = JSON.stringify({
-            username: userName,
-            
-        })
-console.log(body)
+        const body = JSON.stringify({username: userName})
+
         axios({
             method: 'post',
             baseURL: 'https://lending-api.azurewebsites.net/users',
@@ -25,6 +22,7 @@ console.log(body)
             }
         }).then(resp=>{
             console.log(resp)
+            setUserName('')
         })
     }
 

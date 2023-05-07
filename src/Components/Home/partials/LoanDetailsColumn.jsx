@@ -1,20 +1,54 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 
 const LoanDetailsColumn = () => {
+  const [loanForm, setLoanForm] = useState({});
+
+  const handleChange = (e) => {
+    setLoanForm({ ...loanForm, [e.target.name]: e.target.value });
+  };
+  
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const body = JSON.stringify(loanForm)
+    
+    axios({
+      method: 'post',
+      baseURL: 'https://lending-api.azurewebsites.net/loans',
+      data: body,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(resp=>{
+      console.log(resp)
+      setLoanForm({})
+    })
+  }
+
   return (
     <div className="details-column">
-      <form className='loan-form'>
+      <form onSubmit={handleSubmit} className='loan-form'>
         <div className="column">
           <label htmlFor="">Desired loan amount</label>
-          <input type="text" name="amount" pattern='[0-9]*' placeholder='$ 0' id="" />
+          <input type="text" name="amount" onChange={handleChange} placeholder='$ 0' id="" />
+        </div>
+        <div className="column">
+          <label htmlFor="">Estimated apr</label>
+          <input type="text" name="apr" onChange={handleChange} placeholder='%' id="" />
         </div>
         <div className="column">
           <label htmlFor="">Desired loan term</label>
-          <input type="text" name="" pattern='[0-9]*' placeholder='year' id="" />
+          <input type="text" name="term" onChange={handleChange} placeholder='year' id="" />
         </div>
         <div className="column">
-          <label htmlFor="">Estimated interest rate</label>
-          <input type="text" name="" pattern='[0-9]*' placeholder='%' id="" />
+          <label htmlFor="">Owner Id</label>
+          <input type="text" name="owner_id" onChange={handleChange} placeholder='Id' id="" />
+        </div>
+        <div className="column">
+          <label htmlFor="">Status</label>
+          <input type="text" name="status" onChange={handleChange} placeholder='active or inactive' id="" />
         </div>
         <button className='submit-btn'>Calculate</button>
       </form>
