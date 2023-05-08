@@ -76,6 +76,12 @@
     text-align: center;
 }
 
+.response-small {
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
 /* LOAN DETAILS COLUMN*/
 
 .details-column {

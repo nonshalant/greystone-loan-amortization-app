@@ -38,15 +38,14 @@ const LoanScheduleTable = ({ loanSchedule }) => {
     },
   ];
   return (
-    <div className='schedule-table'>
+    <div className='table'>
+      <div className="scrollable">
         <Table 
           columns={columns} 
           dataSource={data} 
           pagination={false} 
         />
-        <div className="redirect">
-          <button>Back</button>
-        </div>
+      </div>
     </div>
   )
 }

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Table } from 'antd';
 import axios from 'axios';
 
-const AmortizationTable = ({ data, setLoanSchedule }) => {
-
+const AmortizationTable = ({ data, setLoanSchedule, responseMsg }) => {
   const [selectedLoan, setSelectedLoan] = useState({
     loan_id: '',
     user_id: ''
@@ -37,15 +36,12 @@ const AmortizationTable = ({ data, setLoanSchedule }) => {
     },
   ];
 
-  const handleRowClick = (record) => {    
+  const handleRowClick = async(record) => {    
     setSelectedLoan({
       loan_id: record.id,
       user_id: record.owner_id
     });
-    fetchSchedule();
-  };
-
-  const fetchSchedule = async() => {
+    
     await axios({
       method: 'get',
       baseURL: `https://lending-api.azurewebsites.net/loans/${selectedLoan.loan_id}`,
@@ -62,13 +58,19 @@ const AmortizationTable = ({ data, setLoanSchedule }) => {
 
   return (
     <div className='table'>    
+      {
+        responseMsg &&
+          <div className="response-small">
+            <p>{responseMsg}</p>
+          </div>
+      }
       <div className="scrollable">
         <Table  
           columns={columns} 
           dataSource={data} 
           pagination={false} 
           rowKey={(record) => record.key} 
-          onRow={(record) => {return {onClick: () => handleRowClick(record)}}} 
+          onRow={(record) => {return {style:{'cursor' : 'pointer'}, onClick: () => handleRowClick(record)}}} 
         />
       </div>
     </div>
