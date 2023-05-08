@@ -44,12 +44,11 @@ const AmortizationTable = ({ data, loanSchedule, setLoanSchedule }) => {
       loan_id: record.id,
       user_id: record.owner_id
     });
-    
     fetchSchedule();
   };
 
-  const fetchSchedule = () => {
-    axios({
+  const fetchSchedule = async() => {
+    await axios({
       method: 'get',
       baseURL: `https://lending-api.azurewebsites.net/loans/${selectedLoan.loan_id}`,
       params: selectedLoan, 
@@ -59,7 +58,7 @@ const AmortizationTable = ({ data, loanSchedule, setLoanSchedule }) => {
     })
     .then(resp => setLoanSchedule(resp))
     .catch(error => {
-      console.log(error);
+      console.error(error);
     });
   };
 

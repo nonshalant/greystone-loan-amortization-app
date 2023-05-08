@@ -37,11 +37,6 @@ const LoanScheduleTable = ({ loanSchedule }) => {
       key: 'close_balance',
     },
   ];
-
-  const handleClick = () =>{
-    
-  }
-
   return (
     <div className='loan-schedule'>
         <Table 
@@ -50,7 +45,7 @@ const LoanScheduleTable = ({ loanSchedule }) => {
           pagination={false} 
         />
         <div className="redirect">
-          <button onClick={handleClick}>Back</button>
+          <button>Back</button>
         </div>
     </div>
   )

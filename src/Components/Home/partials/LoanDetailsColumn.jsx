@@ -8,12 +8,12 @@ const LoanDetailsColumn = () => {
     setLoanForm({ ...loanForm, [e.target.name]: e.target.value });
   };
   
-  const handleSubmit = (e) =>{
+  const handleSubmit = async(e) =>{
     e.preventDefault();
 
     const body = JSON.stringify(loanForm)
     
-    axios({
+    await axios({
       method: 'post',
       baseURL: 'https://lending-api.azurewebsites.net/loans',
       data: body,
@@ -25,6 +25,7 @@ const LoanDetailsColumn = () => {
       console.log(resp)
       setLoanForm({})
     })
+    .catch(error => console.log(error))
   }
 
   return (

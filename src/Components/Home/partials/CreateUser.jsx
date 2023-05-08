@@ -9,11 +9,11 @@ const CreateUser = ({ setUserCreated }) => {
         setUserName(e.target.value)
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault()
         const body = JSON.stringify({username: userName})
 
-        axios({
+        await axios({
             method: 'post',
             baseURL: 'https://lending-api.azurewebsites.net/users',
             data: body,
@@ -23,10 +23,11 @@ const CreateUser = ({ setUserCreated }) => {
         }).then(resp=>{
             setUserCreated(true);
         }).catch(error=>{
-            setUserErrorMessage(error.response.data.detail)
+            setUserErrorMessage(error.response.data.detail);
+
             setTimeout(()=>{
                 setUserErrorMessage('')
-            },3000)
+            },3000);
         });
         setUserName('');
     }

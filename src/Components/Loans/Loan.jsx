@@ -12,17 +12,20 @@ const Loan = () => {
         setSearchValue(e.target.value)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-    
-        axios({
+          
+        await axios({
           method: 'get',
           baseURL: `https://lending-api.azurewebsites.net/users/${searchValue}/loans`,
           headers: {
             "Content-Type": "application/json"
           }
-        }).then(resp=>setData(resp.data))
-        setSearchValue('')
+        })
+        .then(resp=>setData(resp.data))
+        .catch(error => console.error(error))
+
+        setSearchValue('');
       }
 
   return (

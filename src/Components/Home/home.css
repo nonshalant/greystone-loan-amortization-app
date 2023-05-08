@@ -20,6 +20,8 @@
 
 .user {
     display: flex;
+    justify-content: center;
+    margin-top: 5%;
 }
 
 .main-col {
@@ -58,6 +60,7 @@
 
 .details-column {
     width: 50%;
+    
 }
 
 .details-column h2 {

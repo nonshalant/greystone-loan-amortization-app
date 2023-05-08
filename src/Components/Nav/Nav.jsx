@@ -12,6 +12,7 @@ const Nav = () => {
           <ul className='nav-links'>
             <Link to='/'>Home</Link>
             <Link to='/loan-amortization-table'>Loans</Link>
+            <Link to='/loan-share'>Loans-Share</Link>
           </ul>
         </nav>
     </header>

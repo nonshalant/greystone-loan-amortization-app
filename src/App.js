@@ -3,14 +3,16 @@ import './App.css';
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import Loan from './Components/Loans/Loan';
+import LoanShare from './Components/LoanShare/LoanShare';
 
 function App() {
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path='/loan-amortization-table' element={<Loan />}></Route>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/loan-amortization-table' element={<Loan />}></Route>
+        <Route path='/loan-share' element={<LoanShare />}></Route>
       </Routes>
     </div>
   );
