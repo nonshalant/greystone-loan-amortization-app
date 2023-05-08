@@ -68,8 +68,8 @@
     margin: 2.5% 0;
 }
 
-.error-message {
-    background-color: red;
+.response-message {
+    background-color: rgb(205, 192, 192);
     padding: 2%;
     border-radius: 10px;
     width: 100%;

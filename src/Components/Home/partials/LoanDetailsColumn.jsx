@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 const LoanDetailsColumn = () => {
   const [loanForm, setLoanForm] = useState({});
+  const [responseMsg, setResponseMsg] = useState('');
 
   const handleChange = (e) => {
     setLoanForm({ ...loanForm, [e.target.name]: e.target.value });
@@ -21,10 +22,10 @@ const LoanDetailsColumn = () => {
       }
     })
     .then(resp=>{
-      console.log(resp)
+      setResponseMsg('Loan Successfully created!')
       setLoanForm({})
     })
-    .catch(error => console.log(error))
+    .catch(error => setResponseMsg('Loan creation DENIED! Please try again.'))
   }
 
   return (
@@ -52,6 +53,12 @@ const LoanDetailsColumn = () => {
         </div>
         <button className='submit-btn'>Calculate</button>
       </form>
+      {
+        responseMsg &&
+            <div className="response-message">
+                <p>{responseMsg}</p>
+            </div>
+      }
     </div>
   )
 }
