@@ -4,8 +4,6 @@ import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import Loan from './Components/Loans/Loan';
 import LoanShare from './Components/LoanShare/LoanShare';
-import Footer from './Components/Footer/Footer'; 
-import LoanScheduleTable from './Components/Loans/partials/LoanScheduleTable';
 
 function App() {
   return (
@@ -14,7 +12,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/loan-amortization-table' element={<Loan />}></Route>
-        <Route path="/loan-schedule/:loan_id/:user_id" element={<LoanScheduleTable/>}></Route>
         <Route path='/loan-share' element={<LoanShare />}></Route>
       </Routes>
     </div>

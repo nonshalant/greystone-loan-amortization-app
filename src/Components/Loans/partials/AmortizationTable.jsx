@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import axios from 'axios';
 
@@ -36,12 +36,14 @@ const AmortizationTable = ({ data, setLoanSchedule, responseMsg }) => {
     },
   ];
 
-  const handleRowClick = async(record) => {    
+  const handleRowClick = (record) => {   
     setSelectedLoan({
       loan_id: record.id,
       user_id: record.owner_id
     });
-    
+  };
+
+  const fetchLoanSchedule = async() => {
     await axios({
       method: 'get',
       baseURL: `https://lending-api.azurewebsites.net/loans/${selectedLoan.loan_id}`,
@@ -54,7 +56,11 @@ const AmortizationTable = ({ data, setLoanSchedule, responseMsg }) => {
     .catch(error => {
       console.error(error);
     });
-  };
+  }
+
+  useEffect(()=>{
+    fetchLoanSchedule()
+  },[selectedLoan])
 
   return (
     <div className='table'>    

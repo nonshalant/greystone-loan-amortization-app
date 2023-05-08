@@ -1,21 +1,43 @@
-.loan-share h2 {
-    text-align: center;
-    margin: 3% 0;
+.loan-share {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    margin-top: 1%;
 }
+
+/* LOAN SHARE IMAGE  */
+
+.loan-share-image {
+    width: 50%;
+}
+
+.loan-share-image img {
+    height: 100%;
+    width: 100%;
+}
+
+/* LOAN SHARE FORM  */
 
 .loan-share-form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.loan-share-form-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: auto;
+    gap: 20px;
+}
+
+.loan-share-form-container input {
+    padding: 2%;
+    width: 35%;
+    margin: 2% 0;
+}
+
+.loan-share-form-container button {
     width: 20%;
-}
-
-.loan-share-form .loan-col {
-    width: 100%;
-}
-
-.loan-share-form input {
-    padding: 3%;
-    width: 100%;
+    margin: auto;
+    padding: 1.5%;
 }
