@@ -1,0 +1,21 @@
+.loan-share h2 {
+    text-align: center;
+    margin: 3% 0;
+}
+
+.loan-share-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    width: 20%;
+}
+
+.loan-share-form .loan-col {
+    width: 100%;
+}
+
+.loan-share-form input {
+    padding: 3%;
+    width: 100%;
+}

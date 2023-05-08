@@ -2,6 +2,26 @@
     width: 100%;
     margin: auto;
     margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 50%;
+    padding: 3%;
+}
+
+.options p:hover {
+    cursor: pointer;
 }
 
 /* HEADING  */
@@ -20,22 +40,21 @@
 
 .user {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 5%;
 }
 
-.main-col {
-    margin: auto;
-    text-align: center;
-}
-
-.main-col .user-form .input-container {
+.user-form .input-container {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .user-form {
     margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: column;
 }
 
 .user-form .input-details {
@@ -54,20 +73,14 @@
     padding: 2%;
     border-radius: 10px;
     width: 100%;
+    text-align: center;
 }
 
 /* LOAN DETAILS COLUMN*/
 
 .details-column {
     width: 50%;
-    
-}
-
-.details-column h2 {
-    width: 100%;
-    width: 90%;
     margin: auto;
-    text-align: start;
 }
 
 .loan-form {
@@ -97,7 +110,3 @@
     border: 1px solid black;
     border-radius: 10px;
 }
-
-/* LOAN SUMMARY  */
-
-

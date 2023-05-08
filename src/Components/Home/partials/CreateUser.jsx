@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 
-const CreateUser = ({ setUserCreated }) => {
+const CreateUser = () => {
     const [userName, setUserName] = useState('');
     const [userErrorMessage, setUserErrorMessage] = useState('');
+    const [responseMsg, setResponseMsg] = useState('')
 
     const handleChange = (e) =>{ 
         setUserName(e.target.value)
@@ -20,13 +21,17 @@ const CreateUser = ({ setUserCreated }) => {
             headers: {
                 "Content-Type": 'application/json'
             }
-        }).then(resp=>{
-            setUserCreated(true);
-        }).catch(error=>{
-            setUserErrorMessage(error.response.data.detail);
-
+        })
+        .then(resp=>{
+            setResponseMsg("user successfully created")
             setTimeout(()=>{
-                setUserErrorMessage('')
+                setResponseMsg('')
+            },3000);
+        })
+        .catch(error=>{
+            setResponseMsg(error.response.data.detail);
+            setTimeout(()=>{
+                setResponseMsg('')
             },3000);
         });
         setUserName('');
@@ -38,15 +43,15 @@ const CreateUser = ({ setUserCreated }) => {
             <form onSubmit={handleSubmit} className='user-form'>
                 <div className='input-container'>
                     <label htmlFor="user">Enter your user name</label>
-                    <input type="text" name="user" onChange={handleChange} value={userName} placeholder='Full Name' id="user" />
+                    <input required type="text" name="user" onChange={handleChange} value={userName} placeholder='Full Name' id="user" />
                 </div>
                 <p className='input-details'>(We use your name to save your loan details so you can view them later.)</p>
                 <button className='submit-btn'>Create</button>
             </form>
             {
-                userErrorMessage &&
+                responseMsg &&
                     <div className="error-message">
-                        <p>{userErrorMessage}</p>
+                        <p>{responseMsg}</p>
                     </div>
             }
         </div>

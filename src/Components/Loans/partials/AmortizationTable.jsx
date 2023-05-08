@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Table } from 'antd';
 import axios from 'axios';
-import LoanScheduleTable from './LoanScheduleTable';
-import { Link } from 'react-router-dom';
 
-const AmortizationTable = ({ data, loanSchedule, setLoanSchedule }) => {
+const AmortizationTable = ({ data, setLoanSchedule }) => {
 
   const [selectedLoan, setSelectedLoan] = useState({
     loan_id: '',
@@ -65,20 +63,13 @@ const AmortizationTable = ({ data, loanSchedule, setLoanSchedule }) => {
   return (
     <div className='table'>    
       <div className="scrollable">
-        {
-          loanSchedule ? 
-            <LoanScheduleTable 
-              loanSchedule={loanSchedule}
-            />
-            :
-            <Table  
-              columns={columns} 
-              dataSource={data} 
-              pagination={false} 
-              rowKey={(record) => record.key} 
-              onRow={(record) => {return {onClick: () => handleRowClick(record)}}} 
-            />
-        }
+        <Table  
+          columns={columns} 
+          dataSource={data} 
+          pagination={false} 
+          rowKey={(record) => record.key} 
+          onRow={(record) => {return {onClick: () => handleRowClick(record)}}} 
+        />
       </div>
     </div>
   );

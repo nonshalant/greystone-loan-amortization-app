@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import './loanShare.css'
 
 const LoanShare = () => {
   const [loanShareObj, setLoanShareObj] = useState({});
@@ -32,11 +33,17 @@ const LoanShare = () => {
 
   return (
     <div className='loan-share'>
-        <h2>Share a loan</h2>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="loan_id" id="loan_id" onChange={handleChange} placeholder='enter'/>
-          <input type="text" name="owner_id" id="owner_id" onChange={handleChange} placeholder='enter'/>
-          <input type="text" name="user_id" id="user_id" onChange={handleChange} placeholder='enter'/>
+        <h2>Share your loan with another user.</h2>
+        <form className='loan-share-form' onSubmit={handleSubmit}>
+          <div className="loan-col">
+            <input required type="text" name="loan_id" id="loan_id" onChange={handleChange} placeholder='enter loan id'/>
+          </div>
+          <div className="loan-col">
+            <input required type="text" name="owner_id" id="owner_id" onChange={handleChange} placeholder='enter owner id'/>
+          </div>
+          <div className="loan-col">
+            <input required type="text" name="user_id" id="user_id" onChange={handleChange} placeholder='enter user id'/>
+          </div>
           <button>Share</button>
         </form>
     </div>

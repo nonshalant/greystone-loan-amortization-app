@@ -38,7 +38,7 @@ const LoanScheduleTable = ({ loanSchedule }) => {
     },
   ];
   return (
-    <div className='loan-schedule'>
+    <div className='schedule-table'>
         <Table 
           columns={columns} 
           dataSource={data} 

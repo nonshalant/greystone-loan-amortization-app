@@ -23,13 +23,9 @@
     height: 100%;
 }
 
-/* LOAN SUMMARY  */
+/* LOAN SCHEDULE  */
 
-.loan-summary {
+.schedule-table {
+    width: 90%;
     margin: auto;
-    background-color: #a2d8ce;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    padding: 3%;
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import AmortizationTable from './partials/AmortizationTable'
-import './loan.css'
 import axios from 'axios'
+import LoanScheduleTable from './partials/LoanScheduleTable'
+import './loan.css'
 
 const Loan = () => {
     const [ searchValue, setSearchValue] = useState('');
@@ -30,20 +31,29 @@ const Loan = () => {
 
   return (
     <div className='loan'>
-        <div className="loan-form">
-            <h2>Enter your id to view your loans</h2>
-            <form onSubmit={handleSubmit} className="search-input">
-                <input type="text" name="search" id="search" onChange={handleChange} value={searchValue} placeholder='Enter ID'/>
-                <button>Search</button>
-            </form>
-        </div>
-        <div className="loan-details">
-            <AmortizationTable 
-                data={data}
-                setLoanSchedule={setLoanSchedule}
-                loanSchedule={loanSchedule}
-            />
-        </div>
+      {
+          loanSchedule ? 
+            <LoanScheduleTable 
+              loanSchedule={loanSchedule}
+            />  
+            :
+            <>
+              <div className="loan-form">
+                <h2>Enter your user ID to view your loans</h2>
+                <form onSubmit={handleSubmit} className="search-input">
+                    <input required type="text" name="search" id="search" onChange={handleChange} value={searchValue} placeholder='Enter ID'/>
+                    <button>Search</button>
+                </form>
+              </div>
+              <div className="loan-details">
+                <AmortizationTable 
+                  data={data}
+                  setLoanSchedule={setLoanSchedule}
+                  loanSchedule={loanSchedule}
+                />
+              </div>
+            </>
+      }
     </div> 
   )
 }
