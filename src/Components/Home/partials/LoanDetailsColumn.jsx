@@ -32,24 +32,24 @@ const LoanDetailsColumn = () => {
     <div className="details-column">
       <form onSubmit={handleSubmit} className='loan-form'>
         <div className="column">
-          <label htmlFor="">Desired loan amount</label>
-          <input required type="text" name="amount" onChange={handleChange} placeholder='$ 0' id="" />
+          <label htmlFor="amount">Desired loan amount</label>
+          <input required type="text" name="amount" onChange={handleChange} placeholder='$ 0' id="amount" />
         </div>
         <div className="column">
-          <label htmlFor="">Estimated apr</label>
-          <input required type="text" name="apr" onChange={handleChange} placeholder='%' id="" />
+          <label htmlFor="apr">Estimated apr</label>
+          <input required type="text" name="apr" onChange={handleChange} placeholder='%' id="apr" />
         </div>
         <div className="column">
-          <label htmlFor="">Desired loan term</label>
-          <input required type="text" name="term" onChange={handleChange} placeholder='year' id="" />
+          <label htmlFor="term">Desired loan term</label>
+          <input required type="text" name="term" onChange={handleChange} placeholder='year' id="term" />
         </div>
         <div className="column">
-          <label htmlFor="">Owner Id</label>
-          <input required type="text" name="owner_id" onChange={handleChange} placeholder='Id' id="" />
+          <label htmlFor="owner_id">Owner Id</label>
+          <input required type="text" name="owner_id" onChange={handleChange} placeholder='Id' id="owner_id" />
         </div>
         <div className="column">
-          <label htmlFor="">Status</label>
-          <input required type="text" name="status" onChange={handleChange} placeholder='active or inactive' id="" />
+          <label htmlFor="status">Status</label>
+          <input required type="text" name="status" onChange={handleChange} placeholder='active or inactive' id="status" />
         </div>
         <button className='submit-btn'>Calculate</button>
       </form>

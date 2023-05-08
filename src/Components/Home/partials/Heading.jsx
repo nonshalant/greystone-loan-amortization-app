@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Heading = () => {
-
   return (
     <div className='heading-container'>
         <h2>What is amortization?</h2>

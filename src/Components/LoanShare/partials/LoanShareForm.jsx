@@ -28,7 +28,15 @@ const LoanShareForm = () => {
         }
       })
       .then(resp=>setResponseMsg('Loan shared successfully:', resp.statusText))
-      .catch(error => setResponseMsg(error.response.data.detail))
+      .catch(error =>{
+        if (error.response) {
+          setResponseMsg(error.response.data.detail);
+        } else if (error.request) {
+          setResponseMsg("The request was made but no response was received");
+        } else {
+          setResponseMsg("Something happened in setting up the request");
+        }
+      })
     }
   
   return (

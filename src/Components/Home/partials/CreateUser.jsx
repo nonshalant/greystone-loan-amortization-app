@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const CreateUser = () => {
     const [userName, setUserName] = useState('');
-    const [userErrorMessage, setUserErrorMessage] = useState('');
     const [responseMsg, setResponseMsg] = useState('')
 
     const handleChange = (e) =>{ 
